@@ -1,0 +1,145 @@
+{
+  "companydetails": [
+    {
+      "id": 1,
+      "company_name": "Google",
+      "company_website": "www.google.com",
+      "company_phonenumber": 1234567890,
+      "company_address": "120-35/A",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "Hyderabad",
+      "company_state": "Telangana"
+    },
+    {
+      "id": 2,
+      "company_name": "Infosys",
+      "company_website": "www.infosys.com",
+      "company_phonenumber": 1234567890,
+      "company_address": "120-35/A",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "Bangalore",
+      "company_state": "Karnataka"
+    },
+    {
+      "id": 3,
+      "company_name": "NeoSoft",
+      "company_website": "www.neosoft.tech.com",
+      "company_phonenumber": 1234567890,
+      "company_address": "120-39/A",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "vizag",
+      "company_state": "Andhra pradesh"
+    },
+    {
+      "id": 4,
+      "company_name": "Wipro",
+      "company_website": "www.wipro.com",
+      "company_phonenumber": 1234567890,
+      "company_address": "129--09-35/A",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "Mumbai",
+      "company_state": "Maharastra"
+    },
+    {
+      "id": 5,
+      "company_name": "Deloite",
+      "company_website": "www.deloite.com",
+      "company_phonenumber": 1234567890,
+      "company_address": "120-35/A sector-2",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "Lucknow",
+      "company_state": "Uttar pradesh"
+    },
+    {
+      "id": 6,
+      "company_name": "AshvFinance",
+      "company_website": "ww.ashvfinance.com",
+      "company_phonenumber": 1236767890,
+      "company_address": "190-35/C",
+      "company_country": "India",
+      "industry_list": "Account",
+      "company_city": "Bangalore",
+      "company_state": "Karnataka"
+    },
+    {
+      "id": 7,
+      "company_name": "TCS",
+      "company_website": "www.tcs.com",
+      "company_phonenumber": 1234567890,
+      "company_address": "120-35/A",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "Hyderabad",
+      "company_state": "Telangana"
+    },
+    {
+      "id": 8,
+      "company_name": "Mahendra",
+      "company_website": "www.mahendra.com",
+      "company_phonenumber": 1234567890,
+      "company_address": "120-35/A",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "Mumbai",
+      "company_state": "Maharastra"
+    },
+    {
+      "id": 9,
+      "company_name": "RecruitCRM",
+      "company_website": "www.recruitcrm.com",
+      "company_phonenumber": 1245367890,
+      "company_address": "120-39/A",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "Bangalore",
+      "company_state": "Andhra pradesh"
+    },
+    {
+      "id": 10,
+      "company_name": "Wipro",
+      "company_website": "www.wipro.com",
+      "company_phonenumber": 1234567890,
+      "company_address": "129-09-35/A",
+      "company_country": "India",
+      "industry_list": "It",
+      "company_city": "Mumbai",
+      "company_state": "Maharastra"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "firstname": "Sai Revanth",
+      "lastname": "Kakarlapudi",
+      "email": "sairevanth7373@gmail.com",
+      "password": "sairevanth",
+      "id": 2
+    },
+    {
+      "firstname": "Revanth",
+      "lastname": "kalyan",
+      "email": "sairevanth@gmail.com",
+      "password": "sairevanth",
+      "id": 3
+    },
+    {
+      "firstname": "kalyan",
+      "lastname": "Sankar",
+      "email": "kalyan@gmail.com",
+      "password": "asfgh",
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

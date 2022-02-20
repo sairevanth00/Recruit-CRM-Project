@@ -1,0 +1,48 @@
+<div class="container" >
+      <div class="card-main">
+        <div class="card p-3 mb-2">
+          <div class="text-center">
+            <h1>Sign Up</h1>
+            <h3>Register Yourself</h3>
+          </div>
+          <form [formGroup] = "signUpForm" (submit)= "signup()" class="form-el">
+            <!-----   First name Part  ----->
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">First Name</label>
+              <input placeholder="Enter First Name" formControlName="firstname" type="text" class="form-control" id="exampleInputPassword1">
+              <mat-error *ngIf= "signUpForm.controls['firstname'].errors && signUpForm.controls['firstname'].hasError('required')">
+               First name is required
+            </mat-error>
+            </div>
+            <!-----   Last name Part  ----->
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Last Number</label>
+              <input placeholder="Enter Last Name" formControlName="lastname" type="text" class="form-control" id="exampleInputPassword1">
+              <mat-error *ngIf= "signUpForm.controls['lastname'].errors && signUpForm.controls['lastname'].hasError('required')">
+                Last Name is required
+            </mat-error>
+            </div>
+            <!-----   Email Address Part  ----->
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input placeholder="Enter Email" formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <mat-error *ngIf= "signUpForm.controls['email'].errors && signUpForm.controls['email'].hasError('required')">
+                Email is required
+            </mat-error>
+            </div>
+            <!-----   Password Part  ----->
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input placeholder="Enter Password" formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+              <mat-error *ngIf= "signUpForm.controls['password'].errors && signUpForm.controls['password'].hasError('required')">
+                Password is required
+            </mat-error>
+            </div>
+            <!-----   submit Button Part  ----->
+            <button type="submit" [disabled]= "!signUpForm.valid" class="btn btn-primary">Sign Up</button>
+            <a class="link" routerLink="/login">Already registered? Click to Login!!</a>
+          </form>
+        </div>
+      </div>
+  </div>
+  

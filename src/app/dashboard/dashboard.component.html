@@ -1,0 +1,193 @@
+<div class="dashboard-main">
+<!------------------------------------------------------Header part ----------------------------------------------------------------->
+    <mat-toolbar color="primary" class="header">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>&nbsp;&nbsp;John Company</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon nav-btn" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon nav-btn" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+      <button mat-raised-button color="accent" type="button" class="btn btn-primary nav-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Add New Company
+      </button>
+    </mat-toolbar>
+<!-------------------------------------------------------  table part ----------------------------------------------------------->
+<mat-card>
+    <mat-card-title>
+        List of Companies
+    </mat-card-title>
+    <mat-card-content>
+        <table mat-table [dataSource]= "dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Id Column -->
+            <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header > Id </th>
+                <td mat-cell *matCellDef= "let element"> {{element.id}} </td>
+            </ng-container>
+        
+            <!-- Company Name Column -->
+            <ng-container matColumnDef="Company_name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+                <td mat-cell *matCellDef= "let element"> {{element.company_name}} </td>
+            </ng-container>
+        
+            <!-- Company Website Column -->
+            <ng-container matColumnDef="Company_website">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Company Website </th>
+                <td mat-cell *matCellDef= "let element"> {{element.company_website}} </td>
+            </ng-container>
+
+            <!-- Company Address Column -->
+            <ng-container matColumnDef="Address">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+                <td mat-cell *matCellDef= "let element" > {{element.company_address}} </td>
+            </ng-container>
+        
+            <!-- Company City Column -->
+            <ng-container matColumnDef="City">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+                <td mat-cell *matCellDef= "let element" > {{element.company_city}} </td>
+            </ng-container>
+        
+            <!-- Company State Column -->
+            <ng-container matColumnDef="State">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
+                <td mat-cell *matCellDef= "let element"> {{element.company_state}} </td>
+            </ng-container>
+        
+            <!-- Table Actions Column -->
+            <ng-container matColumnDef="Actions">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+                <td mat-cell *matCellDef= "let element"> 
+                    <button mat-raised-button color="primary" (click)= "editCompany(element)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>&nbsp;|&nbsp;
+                    <button mat-raised-button color="warn" (click)= "deleteCompany(element)">Delete</button> 
+                </td>
+            </ng-container>
+            <!-- Table Rows -->
+            <tr mat-header-row *matHeaderRowDef= "displayedColumns"></tr>
+            <tr mat-row *matRowDef= "let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]= "[5, 10, 20]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic elements">
+        </mat-paginator>
+
+    </mat-card-content>
+
+</mat-card>
+<!----------------------------------------------------  footer part ----------------------------------------------------------->
+    <mat-toolbar color="primary">
+        <p class="footer-txt">@ 2022 RecruitCRM copyrights Pvt Ltd</p>
+    </mat-toolbar>
+</div>
+
+<!-------------------------------------------------- Button trigger modal part---------------------------------------------------------->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Enter Company Details</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" *ngIf= "newCompanyDetails">
+            <form [formGroup]= "newCompanyDetails"> 
+                <div class="form-fields" *ngIf= "newCompanyDetails">
+                <div class="mr" *ngIf= "newCompanyDetails">
+                    <p *ngIf= "newCompanyDetails">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Company Name</mat-label>
+                        <input matInput placeholder="company name" formControlName="company_name">                    
+                        <mat-error *ngIf= "newCompanyDetails.controls['company_name'].errors && newCompanyDetails.controls['company_name'].hasError('required')">
+                        Company Name is required
+                        </mat-error>
+                    </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                        <mat-label>Company Website</mat-label>
+                        <input matInput placeholder="company website" formControlName="company_website">
+                        <mat-error *ngIf= "newCompanyDetails.controls['company_website'].errors && newCompanyDetails.controls['company_website'].hasError('required')">
+                            Company Website is required
+                        </mat-error>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Company Phonenumber</mat-label>
+                            <input matInput placeholder="Company Phone Number" formControlName="company_phonenumber">
+                            <mat-error *ngIf= "newCompanyDetails.controls['company_phonenumber'].errors && newCompanyDetails.controls['company_phonenumber'].hasError('required')">
+                                Phone number is required
+                            </mat-error>
+                        </mat-form-field>
+                    </p>      
+                    <p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Company Address</mat-label>
+                        <input matInput placeholder="company address" formControlName="company_address">
+                        <mat-error *ngIf= "newCompanyDetails.controls['company_address'].errors && newCompanyDetails.controls['company_address'].hasError('required')">
+                            Company Address is required
+                        </mat-error>
+                      </mat-form-field>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="city" formControlName="company_city">
+                        <mat-error *ngIf= "newCompanyDetails.controls['company_city'].errors && newCompanyDetails.controls['company_city'].hasError('required')">
+                          City is required
+                        </mat-error>
+                      </mat-form-field>
+                    </p>
+                    <p>
+                      <mat-form-field appearance="outline">
+                        <mat-label>State</mat-label>
+                        <input matInput placeholder="state" formControlName="company_state">
+                        <mat-error *ngIf= "newCompanyDetails.controls['company_state'].errors && newCompanyDetails.controls['company_state'].hasError('required')">
+                        State is required
+                        </mat-error>
+                      </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Country</mat-label>
+                            <input matInput placeholder="country" formControlName="company_country">
+                        <mat-error *ngIf= "newCompanyDetails.controls['company_country'].errors && newCompanyDetails.controls['company_country'].hasError('required')">
+                            Counrty is required
+                        </mat-error>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Industry</mat-label>
+                            <mat-select required placeholder="Industry">
+                              <mat-option value="IT">It</mat-option>
+                              <mat-option value="Medical">Health Care</mat-option>
+                              <mat-option value="Account">Account</mat-option>
+                              <mat-option value="Account">Sales</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </p>
+                </div>
+                </div>
+                <div class="modal-footer" *ngIf= "newCompanyDetails">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="cancel" [disabled]= "!newCompanyDetails.valid" (click)= "addCompanyDetails()" class="btn btn-primary">Add</button>
+                    <button type="button" id="cancel" [disabled]= "!newCompanyDetails.valid" (click)= "updateCompanyDetails()" class="btn btn-primary">Update</button>
+                    <button type="button" mat-raised-button color="warn" (click)= "resetForm()" class="btn btn-primary">Reset</button>
+                </div> 
+              </form>   
+        </div>
+      </div>
+    </div>
+  </div>

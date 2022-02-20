@@ -1,0 +1,31 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.dashboard-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+}
+.footer-txt{
+    text-align: center;
+}
+.nav-btn{
+    margin-right: 5px;
+}
+.form-fields{
+    display: flex;
+    justify-content: space-between;
+}
+table {
+    width: 100%;
+  }
+  .mr{
+      margin-right: 10px;
+  }
+  .padding{
+      padding: 10px;
+  }
+  .header{
+      width: 100%;
+  }

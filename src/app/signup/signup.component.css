@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.link{
+    text-decoration: none;
+    color: rgb(16, 99, 102);
+    padding-left: 10px;
+    font-weight: 500;
+}
+.form-el{
+    width: 500px;
+}
+.card{
+    background-color: rgb(245, 206, 158);
+    color: rgb(4, 31, 104);
+}

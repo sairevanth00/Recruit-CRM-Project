@@ -1,0 +1,32 @@
+<div class="container">
+      <div class="card-main">
+        <div class="card p-3 mb-2 bg-primary text-white">
+          <div class="text-center">
+            <h1>Login</h1>
+            <h3>Please Enter email & password !!</h3>
+          </div>
+          <form [formGroup] = "loginForm" (submit)= "login()" class="form-el">
+            <!-----   Email Address Part  ----->
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input formControlName="email" placeholder="Enter Email" required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <mat-error *ngIf= "loginForm.controls['email'].errors && loginForm.controls['email'].hasError('required')">
+                Email is required
+              </mat-error>
+            </div>
+            <!-----   Password Part  ----->
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input formControlName="password" placeholder="Enter Password" required type="password" class="form-control" id="exampleInputPassword1">
+              <mat-error *ngIf= "loginForm.controls['password'].errors && loginForm.controls['password'].hasError('required')">
+                Password is required
+              </mat-error>
+            </div>
+            <!-----   Submit Part  ----->
+            <button type="submit" [disabled]= "!loginForm.valid" class="btn btn-danger text-white">Login</button>
+            <a routerLink="/signup" class="text-white">New User? Click to Signup!!</a>
+          </form>
+        </div>
+      </div>
+  </div>
+  
